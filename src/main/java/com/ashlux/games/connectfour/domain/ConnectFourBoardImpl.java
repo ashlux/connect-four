@@ -74,4 +74,14 @@ public class ConnectFourBoardImpl
 
         columns.get( x ).add( player );
     }
+
+    public int getNumberOfRows()
+    {
+        return MAX_ROWS;
+    }
+
+    public int getNumberOfColumns()
+    {
+        return MAX_COLUMNS;
+    }
 }

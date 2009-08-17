@@ -26,4 +26,8 @@ public interface ConnectFourBoard
      * @throws ColumnFullException Too many pieces in column.
      */
     void putPiece(int x, @NotNull Player player) throws IllegalArgumentException, ColumnFullException;
+
+    int getNumberOfRows();
+
+    int getNumberOfColumns();
 }
