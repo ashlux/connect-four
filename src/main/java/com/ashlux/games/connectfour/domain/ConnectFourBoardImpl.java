@@ -1,6 +1,5 @@
 package com.ashlux.games.connectfour.domain;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import com.sun.istack.internal.NotNull;
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
 
@@ -10,6 +9,10 @@ import java.util.LinkedList;
 public class ConnectFourBoardImpl
     implements ConnectFourBoard
 {
+    public static final int MAX_ROWS = 6;
+
+    public static final int MAX_COLUMNS = 7;
+
     private List<List<Player>> columns;
 
     public ConnectFourBoardImpl()
@@ -35,13 +38,40 @@ public class ConnectFourBoardImpl
     }
 
     public Player getPieceAt( int x, int y )
-        throws InvalidArgumentException
+        throws IllegalArgumentException
     {
-        return null;
+        // TODO: Duplication
+        if ( x >= MAX_COLUMNS || x < 0 )
+        {
+            throw new IllegalArgumentException( "Column [" + x + "] is invalid." );
+        }
+
+        if ( y >= MAX_ROWS || y < 0 )
+        {
+            throw new IllegalArgumentException( "Row [" + y + "] is invalid." );
+        }
+
+        if (columns.get( x ).size() <= y ) {
+            return null;
+        }
+
+        return columns.get( x ).get( y );
     }
 
     public void putPiece( int x, @NotNull Player player )
-        throws InvalidArgumentException, ColumnFullException
+        throws IllegalArgumentException, ColumnFullException
     {
+        // TODO: Duplication
+        if ( x >= MAX_COLUMNS || x < 0 )
+        {
+            throw new IllegalArgumentException( "Column [" + x + "] is invalid." );
+        }
+
+        if (columns.get( x ).size() >= MAX_ROWS)
+        {
+            throw new ColumnFullException();
+        }
+
+        columns.get( x ).add( player );
     }
 }
