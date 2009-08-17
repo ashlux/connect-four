@@ -1,9 +1,14 @@
-package com.ashlux.games.connectfour.domain;
+package com.ashlux.games.connectfour.business;
 
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
+import com.ashlux.games.connectfour.domain.ConnectFourBoard;
+import com.ashlux.games.connectfour.domain.ConnectFourBoardImpl;
+import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.business.ConnectFourScorerImpl;
 import static org.testng.Assert.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 public class ConnectFourScorerImplTest
 {
@@ -63,7 +68,7 @@ public class ConnectFourScorerImplTest
                        "BBRRRRB" );
 
         assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
-        assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
+        Assert.assertEquals( Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
     @Test
