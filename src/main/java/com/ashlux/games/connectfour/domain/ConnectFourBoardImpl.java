@@ -83,4 +83,9 @@ public class ConnectFourBoardImpl
     {
         return MAX_COLUMNS;
     }
+
+    public boolean isColumnFull( int x )
+    {
+        return columns.get( x ).size() >= MAX_ROWS;
+    }
 }

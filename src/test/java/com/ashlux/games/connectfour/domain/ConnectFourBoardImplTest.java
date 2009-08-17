@@ -1,8 +1,7 @@
 package com.ashlux.games.connectfour.domain;
 
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNull;
+import static org.testng.Assert.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -92,5 +91,30 @@ public class ConnectFourBoardImplTest
     {
         connectFourBoard.putPiece( 0, Player.RED );
         assertEquals( Player.RED, connectFourBoard.getColumns().get( 0 ).get( 0 ) );
+    }
+
+    @Test
+    public void testIsColumnFull()
+    {
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+
+        assertTrue( connectFourBoard.isColumnFull( 0 ) );
+        assertFalse( connectFourBoard.isColumnFull( 1 ) );
+        assertFalse( connectFourBoard.isColumnFull( 2 ) );
+        assertFalse( connectFourBoard.isColumnFull( 3 ) );
+        assertFalse( connectFourBoard.isColumnFull( 4 ) );
+        assertFalse( connectFourBoard.isColumnFull( 5 ) );
+        assertFalse( connectFourBoard.isColumnFull( 6 ) );
+    }
+
+    @Test(expectedExceptions = IndexOutOfBoundsException.class)
+    public void testIsColumnFull_columnDoesNotExist()
+    {
+        connectFourBoard.isColumnFull( 1000000 );
     }
 }
