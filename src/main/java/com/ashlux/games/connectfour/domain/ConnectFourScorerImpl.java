@@ -64,7 +64,7 @@ public class ConnectFourScorerImpl
         }
 
         // check backward diag \
-        if ( x + 3 >= 0 &&
+        if ( x + 3 < connectFourBoard.getNumberOfColumns() &&
             y - 3 >= 0 &&
             connectFourBoard.getPieceAt( x + 1, y - 1 ) == testPiece &&
             connectFourBoard.getPieceAt( x + 2, y - 2 ) == testPiece &&
