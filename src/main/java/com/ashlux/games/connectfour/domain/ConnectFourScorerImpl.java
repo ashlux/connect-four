@@ -12,32 +12,65 @@ public class ConnectFourScorerImpl
 
     public Player getWinner( ConnectFourBoard connectFourBoard )
     {
-        Player lastPlayerFound;
-        int numberInARow;
-        for ( int columnIndex = 0; columnIndex < connectFourBoard.getNumberOfColumns(); ++columnIndex )
+        for ( int x = 0; x < connectFourBoard.getNumberOfColumns(); ++x )
         {
-            // rest for new row
-            lastPlayerFound = null;
-            numberInARow = 1;
-
-            for ( int rowIndex = 0; rowIndex < connectFourBoard.getNumberOfRows(); ++rowIndex )
+            for ( int y = 0; y < connectFourBoard.getNumberOfRows(); ++y )
             {
-                Player currentPlayer = connectFourBoard.getPieceAt( columnIndex, rowIndex );
-                if (currentPlayer != null && currentPlayer == lastPlayerFound )
+                Player winningPlayer = winnerAtPointStartOfAWinningSolution( connectFourBoard, x, y );
+                if ( winningPlayer != null )
                 {
-                    ++numberInARow;
-                }
-                else
-                {
-                    lastPlayerFound = currentPlayer;
-                    numberInARow = 1;
-                }
-
-                if ( numberInARow == 4 )
-                {
-                    return lastPlayerFound;
+                    return winningPlayer;
                 }
             }
+        }
+        return null;
+    }
+
+    private Player winnerAtPointStartOfAWinningSolution( ConnectFourBoard connectFourBoard, int x, int y )
+    {
+        Player testPiece = connectFourBoard.getPieceAt( x, y );
+
+        if ( testPiece == null )
+        {
+            return null;
+        }
+
+        // check row
+        if ( x + 3 < connectFourBoard.getNumberOfColumns() &&
+            connectFourBoard.getPieceAt( x + 1, y ) == testPiece &&
+            connectFourBoard.getPieceAt( x + 2, y ) == testPiece &&
+            connectFourBoard.getPieceAt( x + 3, y ) == testPiece )
+        {
+            return testPiece;
+        }
+
+        // check column
+        if ( y + 3 < connectFourBoard.getNumberOfRows() &&
+            connectFourBoard.getPieceAt( x, y + 1 ) == testPiece &&
+            connectFourBoard.getPieceAt( x, y + 2 ) == testPiece &&
+            connectFourBoard.getPieceAt( x, y + 3 ) == testPiece )
+        {
+            return testPiece;
+        }
+
+        // check forward diag /
+        if ( x + 3 < connectFourBoard.getNumberOfColumns() &&
+            y + 3 < connectFourBoard.getNumberOfRows() &&
+            connectFourBoard.getPieceAt( x + 1, y + 1 ) == testPiece &&
+            connectFourBoard.getPieceAt( x + 2, y + 2 ) == testPiece &&
+            connectFourBoard.getPieceAt( x + 3, y + 3 ) == testPiece )
+        {
+            return testPiece;
+        }
+
+        // check backward diag \
+        if ( x + 3 >= 0 &&
+            y - 3 >= 0 &&
+            connectFourBoard.getPieceAt( x + 1, y - 1 ) == testPiece &&
+            connectFourBoard.getPieceAt( x + 2, y - 2 ) == testPiece &&
+            connectFourBoard.getPieceAt( x + 3, y - 3 ) == testPiece )
+        {
+            return testPiece;
         }
 
         return null;
