@@ -1,7 +1,6 @@
 package com.ashlux.games.connectfour.domain;
 
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
-import com.sun.istack.internal.NotNull;
 
 public interface ConnectFourBoard
 {
@@ -25,7 +24,7 @@ public interface ConnectFourBoard
      * @throws IllegalArgumentException If X is outside the board
      * @throws ColumnFullException Too many pieces in column.
      */
-    void putPiece(int x, @NotNull Player player) throws IllegalArgumentException, ColumnFullException;
+    void putPiece(int x, Player player) throws IllegalArgumentException, ColumnFullException;
 
     int getNumberOfRows();
 

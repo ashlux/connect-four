@@ -1,6 +1,5 @@
 package com.ashlux.games.connectfour.domain;
 
-import com.sun.istack.internal.NotNull;
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
 
 import java.util.List;
@@ -58,7 +57,7 @@ public class ConnectFourBoardImpl
         return columns.get( x ).get( y );
     }
 
-    public void putPiece( int x, @NotNull Player player )
+    public void putPiece( int x, Player player )
         throws IllegalArgumentException, ColumnFullException
     {
         // TODO: Duplication
