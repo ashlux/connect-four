@@ -2,7 +2,6 @@ package com.ashlux.games.connectfour.business.play;
 
 import com.ashlux.games.connectfour.business.players.ConnectFourPlayer;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
-import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
 import com.ashlux.games.connectfour.domain.GamePiece;
 
 public class PlayConnectFour
@@ -15,9 +14,9 @@ public class PlayConnectFour
 
     private GamePiece secondGamePiecePiece;
 
-    private ConnectFourScorer connectFourScorer = new ConnectFourScorerImpl();
+    private ConnectFourScorer connectFourScorer;
 
-    private ConnectFourBoard connectFourBoard = ConnectFourBoardFactory.createEmptyBoard();
+    private ConnectFourBoard connectFourBoard;
 
     public void play()
         throws Exception
@@ -57,12 +56,12 @@ public class PlayConnectFour
         this.firstPlayer = firstPlayer;
     }
 
-    public GamePiece getFirstPlayerPiece()
+    public GamePiece getFirstGamePiecePiece()
     {
         return firstGamePiecePiece;
     }
 
-    public void setFirstPlayerPiece( GamePiece firstGamePiecePiece )
+    public void setFirstGamePiecePiece( GamePiece firstGamePiecePiece )
     {
         this.firstGamePiecePiece = firstGamePiecePiece;
     }
@@ -77,13 +76,33 @@ public class PlayConnectFour
         this.secondPlayer = secondPlayer;
     }
 
-    public GamePiece getSecondPlayerPiece()
+    public GamePiece getSecondGamePiecePiece()
     {
         return secondGamePiecePiece;
     }
 
-    public void setSecondPlayerPiece( GamePiece secondGamePiecePiece )
+    public void setSecondGamePiecePiece( GamePiece secondGamePiecePiece )
     {
         this.secondGamePiecePiece = secondGamePiecePiece;
+    }
+
+    public ConnectFourScorer getConnectFourScorer()
+    {
+        return connectFourScorer;
+    }
+
+    public void setConnectFourScorer( ConnectFourScorer connectFourScorer )
+    {
+        this.connectFourScorer = connectFourScorer;
+    }
+
+    public ConnectFourBoard getConnectFourBoard()
+    {
+        return connectFourBoard;
+    }
+
+    public void setConnectFourBoard( ConnectFourBoard connectFourBoard )
+    {
+        this.connectFourBoard = connectFourBoard;
     }
 }
