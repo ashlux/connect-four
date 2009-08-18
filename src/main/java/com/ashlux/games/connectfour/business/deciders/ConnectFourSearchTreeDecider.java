@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business.ai;
+package com.ashlux.games.connectfour.business.deciders;
 
 import com.ashlux.games.connectfour.business.play.ConnectFourScorer;
 import com.ashlux.games.connectfour.business.play.ConnectFourScorerImpl;

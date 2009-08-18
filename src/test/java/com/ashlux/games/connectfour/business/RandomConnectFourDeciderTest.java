@@ -4,7 +4,7 @@ import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardImpl;
 import com.ashlux.games.connectfour.domain.Player;
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
-import com.ashlux.games.connectfour.business.ai.RandomConnectFourDecider;
+import com.ashlux.games.connectfour.business.deciders.RandomConnectFourDecider;
 import static org.testng.Assert.assertEquals;
 import org.testng.annotations.Test;
 

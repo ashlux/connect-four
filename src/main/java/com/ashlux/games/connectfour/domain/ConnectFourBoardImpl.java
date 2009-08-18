@@ -101,4 +101,32 @@ public class ConnectFourBoardImpl
         }
         return true;
     }
+
+    @Override
+    public String toString()
+    {
+        String string = "";
+
+        for ( int y = MAX_ROWS - 1; y >= 0; --y )
+        {
+            for ( int x = 0; x < MAX_COLUMNS; ++x )
+            {
+                Player player = getPieceAt( x, y );
+                if ( player == null )
+                {
+                    string += ". ";
+                }
+                else if ( player == Player.RED )
+                {
+                    string += "r ";
+                }
+                else
+                {
+                    string += "B ";
+                }
+            }
+            string += "\n";
+        }
+        return string;
+    }
 }
