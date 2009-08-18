@@ -152,4 +152,20 @@ public class ConnectFourBoardImplTest
 
         assertTrue(connectFourBoard.isBoardFull());
     }
+
+    @Test
+    public void testToString()
+    {
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.BLACK );
+
+        String toString = connectFourBoard.toString();
+
+        assertEquals(toString, ". . . . . . . \n" +
+                               ". . . . . . . \n" +
+                               ". . . . . . . \n" +
+                               ". . . . . . . \n" +
+                               "B . . . . . . \n" +
+                               "r . . . . . . \n");
+    }
 }

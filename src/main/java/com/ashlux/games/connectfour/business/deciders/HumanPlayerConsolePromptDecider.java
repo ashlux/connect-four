@@ -4,22 +4,25 @@ import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.Player;
 import org.apache.commons.io.IOUtils;
 
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 
+/**
+ * Not thread-safe.
+ */
 public class HumanPlayerConsolePromptDecider
     implements ConnectFourDecider
 {
     private OutputStream outputStream;
 
-    private InputStream inputStream;
+    private BufferedReader bufferedReader;
 
     public HumanPlayerConsolePromptDecider( OutputStream outputStream, InputStream inputStream )
     {
+        bufferedReader = new BufferedReader( new InputStreamReader( inputStream ) );
         this.outputStream = outputStream;
-        this.inputStream = inputStream;
     }
 
     public int decide( ConnectFourBoard connectFourBoard, Player computerPlayer )
@@ -35,11 +38,10 @@ public class HumanPlayerConsolePromptDecider
 
             IOUtils.write( "\nSelect column [0-6]: ", outputStream );
 
-            BufferedReader bufferedReader = new BufferedReader( new InputStreamReader( inputStream ) );
             String input = bufferedReader.readLine();
             IOUtils.write( input + "\n\n", outputStream );
 
-            int selectedColumn = Integer.parseInt( String.valueOf( input.charAt( 0 ) ) );
+            int selectedColumn = Integer.parseInt( input );
             if ( selectedColumn < 0 || selectedColumn > connectFourBoard.getNumberOfColumns() )
             {
                 IOUtils.write( "Invalid column, please try again.\n", outputStream );
