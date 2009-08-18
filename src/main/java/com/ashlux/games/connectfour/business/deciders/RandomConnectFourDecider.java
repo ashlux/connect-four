@@ -20,8 +20,4 @@ public class RandomConnectFourDecider
         return column;
     }
 
-    public String deciderName()
-    {
-        return "Chaos (Random)";
-    }
 }

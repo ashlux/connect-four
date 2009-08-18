@@ -14,6 +14,4 @@ public interface ConnectFourDecider
      * @return integer
      */
     int decide( final ConnectFourBoard connectFourBoard, final Player computerPlayer );
-    
-    String deciderName();
 }

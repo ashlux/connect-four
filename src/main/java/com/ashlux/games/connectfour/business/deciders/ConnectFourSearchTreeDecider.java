@@ -113,11 +113,6 @@ public class ConnectFourSearchTreeDecider
         }
     }
 
-    public String deciderName()
-    {
-        return NAME;
-    }
-
     private class PathChoice
         implements Comparable
     {

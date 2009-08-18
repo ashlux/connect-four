@@ -62,8 +62,4 @@ public class HumanPlayerConsolePromptDecider
         }
     }
 
-    public String deciderName()
-    {
-        return "HUMAN";
-    }
 }
