@@ -4,7 +4,7 @@ import com.ashlux.games.connectfour.business.players.ConnectFourPlayer;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.GamePiece;
 
-public class PlayConnectFour
+public class ConnectFourGame
 {
     private ConnectFourPlayer firstPlayer;
 
