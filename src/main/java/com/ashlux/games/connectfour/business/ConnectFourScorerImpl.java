@@ -7,7 +7,7 @@ public class ConnectFourScorerImpl
     implements ConnectFourScorer
 {
 
-    public boolean hasWinner( final ConnectFourBoard connectFourBoard )
+    public boolean isGameOver( final ConnectFourBoard connectFourBoard )
     {
         return getWinner( connectFourBoard ) != null;
 

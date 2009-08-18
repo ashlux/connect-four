@@ -35,7 +35,7 @@ public class ConnectFourScorerImplTest
                        "-------",
                        "-------" );
 
-        assertFalse(connectFourScorer.hasWinner( connectFourBoard ));
+        assertFalse(connectFourScorer.isGameOver( connectFourBoard ));
         assertNull(connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -51,7 +51,7 @@ public class ConnectFourScorerImplTest
                        "RBRBRBR",
                        "RBRBRBR" );
 
-        assertFalse(connectFourScorer.hasWinner( connectFourBoard ));
+        assertFalse(connectFourScorer.isGameOver( connectFourBoard ));
         assertNull(connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -67,7 +67,7 @@ public class ConnectFourScorerImplTest
                        "-------",
                        "BBRRRRB" );
 
-        assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         Assert.assertEquals( Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -83,7 +83,7 @@ public class ConnectFourScorerImplTest
                        "-------",
                        "RRRRBBB" );
 
-        assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -99,7 +99,7 @@ public class ConnectFourScorerImplTest
                        "-------",
                        "BBBRRRR" );
 
-        assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -115,7 +115,7 @@ public class ConnectFourScorerImplTest
                        "RB-----",
                        "RB-----" );
 
-        assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -131,7 +131,7 @@ public class ConnectFourScorerImplTest
                        "-----BR",
                        "-----BR" );
 
-        assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -149,7 +149,7 @@ public class ConnectFourScorerImplTest
                        "-RBB---",
                        "RBBRB--" );
 
-        assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
@@ -166,7 +166,7 @@ public class ConnectFourScorerImplTest
                        "---RBRB",
                        "---RBBR" );
 
-        assertTrue(connectFourScorer.hasWinner( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
     

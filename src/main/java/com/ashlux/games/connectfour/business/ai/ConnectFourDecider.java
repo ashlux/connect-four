@@ -6,7 +6,8 @@ import com.ashlux.games.connectfour.domain.Player;
 public interface ConnectFourDecider
 {
     /**
-     * Returns column to play - starting at zero.
+     * Returns column to play - starting at zero. Called whenever it is the computer's
+     * turn to make a decision.
      *
      * @param connectFourBoard connect four board to make decision based on
      * @param computerPlayer color the computer is playing

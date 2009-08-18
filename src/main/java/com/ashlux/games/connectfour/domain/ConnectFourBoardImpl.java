@@ -50,7 +50,8 @@ public class ConnectFourBoardImpl
             throw new IllegalArgumentException( "Row [" + y + "] is invalid." );
         }
 
-        if (columns.get( x ).size() <= y ) {
+        if ( columns.get( x ).size() <= y )
+        {
             return null;
         }
 
@@ -66,7 +67,7 @@ public class ConnectFourBoardImpl
             throw new IllegalArgumentException( "Column [" + x + "] is invalid." );
         }
 
-        if (columns.get( x ).size() >= MAX_ROWS)
+        if ( columns.get( x ).size() >= MAX_ROWS )
         {
             throw new ColumnFullException();
         }
@@ -87,5 +88,17 @@ public class ConnectFourBoardImpl
     public boolean isColumnFull( int x )
     {
         return columns.get( x ).size() >= MAX_ROWS;
+    }
+
+    public boolean isBoardFull()
+    {
+        for ( int x = 0; x < MAX_COLUMNS; ++x )
+        {
+            if ( !isColumnFull( x ) )
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -117,4 +117,39 @@ public class ConnectFourBoardImplTest
     {
         connectFourBoard.isColumnFull( 1000000 );
     }
+
+    @Test
+    public void testIsBoardFull_emptyBoard()
+    {
+        assertFalse(connectFourBoard.isBoardFull());
+    }
+
+    @Test
+    public void testIsBoardFull_columnZeroIsFullRestEmpty()
+    {
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+
+        assertFalse(connectFourBoard.isBoardFull());
+    }
+
+    @Test
+    public void testIsBoardFull_fullBoard()
+    {
+        for (int x = 0; x < connectFourBoard.getNumberOfColumns(); ++x)
+        {
+            connectFourBoard.getColumns().get( x ).add( Player.RED );
+            connectFourBoard.getColumns().get( x ).add( Player.RED );
+            connectFourBoard.getColumns().get( x ).add( Player.RED );
+            connectFourBoard.getColumns().get( x ).add( Player.RED );
+            connectFourBoard.getColumns().get( x ).add( Player.RED );
+            connectFourBoard.getColumns().get( x ).add( Player.RED );
+        }
+
+        assertTrue(connectFourBoard.isBoardFull());
+    }
 }

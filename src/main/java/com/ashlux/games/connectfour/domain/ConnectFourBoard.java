@@ -33,4 +33,6 @@ public interface ConnectFourBoard
     int getNumberOfColumns();
 
     boolean isColumnFull( int x );
+
+    boolean isBoardFull();
 }
