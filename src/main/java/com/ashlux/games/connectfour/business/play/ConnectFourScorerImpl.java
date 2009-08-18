@@ -1,7 +1,7 @@
 package com.ashlux.games.connectfour.business.play;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
-import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.domain.GamePiece;
 
 public class ConnectFourScorerImpl
     implements ConnectFourScorer
@@ -18,25 +18,25 @@ public class ConnectFourScorerImpl
         return getWinner( connectFourBoard ) != null;
     }
 
-    public Player getWinner( ConnectFourBoard connectFourBoard )
+    public GamePiece getWinner( ConnectFourBoard connectFourBoard )
     {
         for ( int x = 0; x < connectFourBoard.getNumberOfColumns(); ++x )
         {
             for ( int y = 0; y < connectFourBoard.getNumberOfRows(); ++y )
             {
-                Player winningPlayer = winnerAtPointStartOfAWinningSolution( connectFourBoard, x, y );
-                if ( winningPlayer != null )
+                GamePiece winningGamePiece = winnerAtPointStartOfAWinningSolution( connectFourBoard, x, y );
+                if ( winningGamePiece != null )
                 {
-                    return winningPlayer;
+                    return winningGamePiece;
                 }
             }
         }
         return null;
     }
 
-    private Player winnerAtPointStartOfAWinningSolution( final ConnectFourBoard connectFourBoard, int x, int y )
+    private GamePiece winnerAtPointStartOfAWinningSolution( final ConnectFourBoard connectFourBoard, int x, int y )
     {
-        Player testPiece = connectFourBoard.getPieceAt( x, y );
+        GamePiece testPiece = connectFourBoard.getPieceAt( x, y );
 
         if ( testPiece == null )
         {

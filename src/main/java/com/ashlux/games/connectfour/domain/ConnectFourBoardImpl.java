@@ -12,31 +12,31 @@ public class ConnectFourBoardImpl
 
     public static final int MAX_COLUMNS = 7;
 
-    private List<List<Player>> columns;
+    private List<List<GamePiece>> columns;
 
     public ConnectFourBoardImpl()
     {
-        columns = new LinkedList<List<Player>>();
-        columns.add( new LinkedList<Player>() );
-        columns.add( new LinkedList<Player>() );
-        columns.add( new LinkedList<Player>() );
-        columns.add( new LinkedList<Player>() );
-        columns.add( new LinkedList<Player>() );
-        columns.add( new LinkedList<Player>() );
-        columns.add( new LinkedList<Player>() );
+        columns = new LinkedList<List<GamePiece>>();
+        columns.add( new LinkedList<GamePiece>() );
+        columns.add( new LinkedList<GamePiece>() );
+        columns.add( new LinkedList<GamePiece>() );
+        columns.add( new LinkedList<GamePiece>() );
+        columns.add( new LinkedList<GamePiece>() );
+        columns.add( new LinkedList<GamePiece>() );
+        columns.add( new LinkedList<GamePiece>() );
     }
 
-    public List<List<Player>> getColumns()
+    public List<List<GamePiece>> getColumns()
     {
         return columns;
     }
 
-    public void setColumns( List<List<Player>> columns )
+    public void setColumns( List<List<GamePiece>> columns )
     {
         this.columns = columns;
     }
 
-    public Player getPieceAt( int x, int y )
+    public GamePiece getPieceAt( int x, int y )
         throws IllegalArgumentException
     {
         // TODO: Duplication
@@ -58,7 +58,7 @@ public class ConnectFourBoardImpl
         return columns.get( x ).get( y );
     }
 
-    public void putPiece( int x, Player player )
+    public void putPiece( int x, GamePiece gamePiece )
         throws IllegalArgumentException, ColumnFullException
     {
         // TODO: Duplication
@@ -72,7 +72,7 @@ public class ConnectFourBoardImpl
             throw new ColumnFullException();
         }
 
-        columns.get( x ).add( player );
+        columns.get( x ).add( gamePiece );
     }
 
     public int getNumberOfRows()
@@ -111,12 +111,12 @@ public class ConnectFourBoardImpl
         {
             for ( int x = 0; x < MAX_COLUMNS; ++x )
             {
-                Player player = getPieceAt( x, y );
-                if ( player == null )
+                GamePiece gamePiece = getPieceAt( x, y );
+                if ( gamePiece == null )
                 {
                     string += ". ";
                 }
-                else if ( player == Player.RED )
+                else if ( gamePiece == GamePiece.RED )
                 {
                     string += "r ";
                 }

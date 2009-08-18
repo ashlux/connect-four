@@ -35,7 +35,7 @@ public class ConnectFourBoardFactory
         {
             for ( int y = 0; y < fromBoard.getNumberOfRows(); ++y )
             {
-                Player pieceAtXY = fromBoard.getPieceAt( x, y );
+                GamePiece pieceAtXY = fromBoard.getPieceAt( x, y );
                 if (pieceAtXY != null) {
                     toBoard.putPiece( x, fromBoard.getPieceAt( x, y ) );
                 }

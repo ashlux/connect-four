@@ -1,7 +1,7 @@
 package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
-import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.domain.GamePiece;
 
 public interface ConnectFourPlayer
 {
@@ -10,8 +10,8 @@ public interface ConnectFourPlayer
      * turn to make a decision.
      *
      * @param connectFourBoard connect four board to make decision based on
-     * @param computerPlayer color the computer is playing
+     * @param computerGamePiece color the computer is playing
      * @return integer
      */
-    int decide( final ConnectFourBoard connectFourBoard, final Player computerPlayer );
+    int decide( final ConnectFourBoard connectFourBoard, final GamePiece computerGamePiece );
 }

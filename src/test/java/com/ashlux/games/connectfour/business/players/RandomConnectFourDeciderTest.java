@@ -2,7 +2,7 @@ package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardImpl;
-import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.domain.GamePiece;
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
 import com.ashlux.games.connectfour.business.players.RandomConnectFourPlayer;
 import static org.testng.Assert.assertEquals;
@@ -20,12 +20,12 @@ public class RandomConnectFourDeciderTest
         {
             for ( int y = 0; y < connectFourBoard.getNumberOfRows(); ++y )
             {
-                connectFourBoard.putPiece( x, Player.RED );
+                connectFourBoard.putPiece( x, GamePiece.RED );
             }
         }
 
         RandomConnectFourPlayer randomConnectFourDecider = new RandomConnectFourPlayer();
-        int column = randomConnectFourDecider.decide( connectFourBoard, Player.RED );
+        int column = randomConnectFourDecider.decide( connectFourBoard, GamePiece.RED );
 
         // last column should always be selected, eventually
         assertEquals( column, connectFourBoard.getNumberOfColumns() - 1 );

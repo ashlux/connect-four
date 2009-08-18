@@ -1,7 +1,7 @@
 package com.ashlux.games.connectfour.business.play;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
-import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.domain.GamePiece;
 
 public interface ConnectFourScorer
 {
@@ -26,5 +26,5 @@ public interface ConnectFourScorer
      * @param connectFourBoard Connect Four Board
      * @return Player enum or null if tie or no winner.
      */
-    Player getWinner( final ConnectFourBoard connectFourBoard );
+    GamePiece getWinner( final ConnectFourBoard connectFourBoard );
 }

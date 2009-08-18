@@ -4,7 +4,7 @@ import com.ashlux.games.connectfour.business.play.ConnectFourScorer;
 import com.ashlux.games.connectfour.business.play.ConnectFourScorerImpl;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
-import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.domain.GamePiece;
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
 import com.ashlux.games.connectfour.domain.exception.ConnectFourRuntimeException;
 
@@ -27,7 +27,7 @@ public class ConnectFourSearchTreePlayer
 
     private ConnectFourScorer connectFourScorer = new ConnectFourScorerImpl();
 
-    public int decide( ConnectFourBoard connectFourBoard, Player computerPlayer )
+    public int decide( ConnectFourBoard connectFourBoard, GamePiece computerGamePiece )
     {
         List<PathChoice> pathChoices = new LinkedList<PathChoice>();
         for ( int x = 0; x < connectFourBoard.getNumberOfColumns(); ++x )
@@ -39,7 +39,7 @@ public class ConnectFourSearchTreePlayer
                 PathChoice pathChoice = new PathChoice();
                 pathChoice.setColumn( x );
                 // current turn is computer since decide is called only on computer's turn
-                pathChoice.setValue( tryColumn( x, connectFourBoard, computerPlayer, computerPlayer ) );
+                pathChoice.setValue( tryColumn( x, connectFourBoard, computerGamePiece, computerGamePiece ) );
                 pathChoices.add( pathChoice );
                 System.out.println( "Recursion Count (After)  = " + count );
                 System.out.println( "Path choice value for column [" + x + "] = " + pathChoice.getValue() );
@@ -51,8 +51,8 @@ public class ConnectFourSearchTreePlayer
         return pathChoices.get( pathChoices.size() - 1 ).getColumn();
     }
 
-    private int tryColumn( int columnIndex, final ConnectFourBoard connectFourBoard, Player computerPlayer,
-                           Player currentTurn )
+    private int tryColumn( int columnIndex, final ConnectFourBoard connectFourBoard, GamePiece computerGamePiece,
+                           GamePiece currentTurn )
     {
         ++count;
 
@@ -69,7 +69,7 @@ public class ConnectFourSearchTreePlayer
 
         if ( connectFourScorer.isGameOver( newConnectFourBoard ) )
         {
-            return getGameOverResult( newConnectFourBoard, computerPlayer );
+            return getGameOverResult( newConnectFourBoard, computerGamePiece );
         }
 
         int result = 0;
@@ -77,29 +77,29 @@ public class ConnectFourSearchTreePlayer
         {
             if ( !newConnectFourBoard.isColumnFull( x ) )
             {
-                result += tryColumn( x, newConnectFourBoard, computerPlayer, getNextTurn( currentTurn ) );
+                result += tryColumn( x, newConnectFourBoard, computerGamePiece, getNextTurn( currentTurn ) );
             }
         }
         return result;
     }
 
-    private Player getNextTurn( Player currentTurn )
+    private GamePiece getNextTurn( GamePiece currentTurn )
     {
-        if ( currentTurn == Player.RED )
+        if ( currentTurn == GamePiece.RED )
         {
-            return Player.BLACK;
+            return GamePiece.BLACK;
         }
         else
         {
-            return Player.RED;
+            return GamePiece.RED;
         }
     }
 
-    private int getGameOverResult( ConnectFourBoard connectFourBoard, Player computerPlayer )
+    private int getGameOverResult( ConnectFourBoard connectFourBoard, GamePiece computerGamePiece )
     {
-        Player winner = connectFourScorer.getWinner( connectFourBoard );
+        GamePiece winner = connectFourScorer.getWinner( connectFourBoard );
 //        System.out.println("WINNER (null=TIE): " + winner);
-        if ( winner == computerPlayer )
+        if ( winner == computerGamePiece )
         {
             return WIN_VALUE;
         }

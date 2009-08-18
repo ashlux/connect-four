@@ -1,7 +1,7 @@
 package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
-import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.domain.GamePiece;
 import org.apache.commons.io.IOUtils;
 
 import java.io.BufferedReader;
@@ -25,7 +25,7 @@ public class HumanPlayerConsolePromptPlayer
         this.outputStream = outputStream;
     }
 
-    public int decide( ConnectFourBoard connectFourBoard, Player computerPlayer )
+    public int decide( ConnectFourBoard connectFourBoard, GamePiece computerGamePiece )
     {
         return getResponse( connectFourBoard );
     }

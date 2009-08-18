@@ -2,7 +2,7 @@ package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
-import com.ashlux.games.connectfour.domain.Player;
+import com.ashlux.games.connectfour.domain.GamePiece;
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -25,7 +25,7 @@ public class HumanPlayerConsolePromptDeciderTest
         HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
             new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
-        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
+        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, GamePiece.RED );
 
         assertEquals( selectedColumn, 0 );
         assertEquals( new String( byteArrayOutputStream.toByteArray() ),
@@ -44,7 +44,7 @@ public class HumanPlayerConsolePromptDeciderTest
         HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
             new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
-        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
+        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, GamePiece.RED );
 
         assertEquals( selectedColumn, 1 );
         String output = new String( byteArrayOutputStream.toByteArray() );
@@ -62,7 +62,7 @@ public class HumanPlayerConsolePromptDeciderTest
         HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
             new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
-        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
+        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, GamePiece.RED );
 
         assertEquals( selectedColumn, 2 );
         String output = new String( byteArrayOutputStream.toByteArray() );
@@ -74,19 +74,19 @@ public class HumanPlayerConsolePromptDeciderTest
         throws IOException, ColumnFullException
     {
         ConnectFourBoard connectFourBoard = ConnectFourBoardFactory.createEmptyBoard();
-        connectFourBoard.putPiece( 0, Player.RED );
-        connectFourBoard.putPiece( 0, Player.RED );
-        connectFourBoard.putPiece( 0, Player.RED );
-        connectFourBoard.putPiece( 0, Player.RED );
-        connectFourBoard.putPiece( 0, Player.RED );
-        connectFourBoard.putPiece( 0, Player.RED );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream( "0\n3\n".getBytes() );
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
             new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
-        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
+        int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, GamePiece.RED );
 
         assertEquals( selectedColumn, 3 );
         String output = new String( byteArrayOutputStream.toByteArray() );

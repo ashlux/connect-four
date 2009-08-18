@@ -12,7 +12,7 @@ public interface ConnectFourBoard
      * @return Which player has a piece at (X, Y). Null if no player is at that location.
      * @throws IllegalArgumentException If x or y is invalid and outside the board.
      */
-    Player getPieceAt( int x, int y )
+    GamePiece getPieceAt( int x, int y )
         throws IllegalArgumentException;
 
 
@@ -21,11 +21,11 @@ public interface ConnectFourBoard
      * Drop piece onto column X.
      *
      * @param x      Column to place player's piece (between 0 and 6).
-     * @param player The player making a move.
+     * @param gamePiece The player making a move.
      * @throws IllegalArgumentException If X is outside the board
      * @throws ColumnFullException      Too many pieces in column.
      */
-    void putPiece( int x, Player player )
+    void putPiece( int x, GamePiece gamePiece )
         throws IllegalArgumentException, ColumnFullException;
 
     int getNumberOfRows();

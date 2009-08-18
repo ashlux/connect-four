@@ -32,10 +32,10 @@ public class ConnectFourBoardFactoryTest
         throws ColumnFullException
     {
         ConnectFourBoard fromConnectFourBoard = ConnectFourBoardFactory.createEmptyBoard();
-        fromConnectFourBoard.putPiece( 4, Player.RED );
-        fromConnectFourBoard.putPiece( 5, Player.BLACK );
-        fromConnectFourBoard.putPiece( 4, Player.RED );
-        fromConnectFourBoard.putPiece( 5, Player.BLACK );
+        fromConnectFourBoard.putPiece( 4, GamePiece.RED );
+        fromConnectFourBoard.putPiece( 5, GamePiece.BLACK );
+        fromConnectFourBoard.putPiece( 4, GamePiece.RED );
+        fromConnectFourBoard.putPiece( 5, GamePiece.BLACK );
 
         ConnectFourBoard toConnectFourBoard = ConnectFourBoardFactory.copyBoard( fromConnectFourBoard );
 

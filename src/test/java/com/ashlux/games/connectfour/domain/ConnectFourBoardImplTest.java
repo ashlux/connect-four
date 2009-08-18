@@ -54,54 +54,54 @@ public class ConnectFourBoardImplTest
     public void testGetPieceAt_pieceFound()
         throws IllegalArgumentException, ColumnFullException
     {
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        assertEquals( Player.RED, connectFourBoard.getPieceAt( 0, 0 ) );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        assertEquals( GamePiece.RED, connectFourBoard.getPieceAt( 0, 0 ) );
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testPutPiece_negativeColumn_invalid()
         throws ColumnFullException, IllegalArgumentException
     {
-        connectFourBoard.putPiece( -1, Player.RED );
+        connectFourBoard.putPiece( -1, GamePiece.RED );
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testPutPiece_columnTooBig_invalid()
         throws ColumnFullException, IllegalArgumentException
     {
-        connectFourBoard.putPiece( 7, Player.RED );
+        connectFourBoard.putPiece( 7, GamePiece.RED );
     }
 
     @Test(expectedExceptions = ColumnFullException.class)
     public void testPutPiece_columnTooFull()
         throws ColumnFullException, IllegalArgumentException
     {
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.putPiece( 0, Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
     }
 
     @Test
     public void testPutPiece()
         throws IllegalArgumentException, ColumnFullException
     {
-        connectFourBoard.putPiece( 0, Player.RED );
-        assertEquals( Player.RED, connectFourBoard.getColumns().get( 0 ).get( 0 ) );
+        connectFourBoard.putPiece( 0, GamePiece.RED );
+        assertEquals( GamePiece.RED, connectFourBoard.getColumns().get( 0 ).get( 0 ) );
     }
 
     @Test
     public void testIsColumnFull()
     {
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
 
         assertTrue( connectFourBoard.isColumnFull( 0 ) );
         assertFalse( connectFourBoard.isColumnFull( 1 ) );
@@ -127,12 +127,12 @@ public class ConnectFourBoardImplTest
     @Test
     public void testIsBoardFull_columnZeroIsFullRestEmpty()
     {
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
 
         assertFalse(connectFourBoard.isBoardFull());
     }
@@ -142,12 +142,12 @@ public class ConnectFourBoardImplTest
     {
         for (int x = 0; x < connectFourBoard.getNumberOfColumns(); ++x)
         {
-            connectFourBoard.getColumns().get( x ).add( Player.RED );
-            connectFourBoard.getColumns().get( x ).add( Player.RED );
-            connectFourBoard.getColumns().get( x ).add( Player.RED );
-            connectFourBoard.getColumns().get( x ).add( Player.RED );
-            connectFourBoard.getColumns().get( x ).add( Player.RED );
-            connectFourBoard.getColumns().get( x ).add( Player.RED );
+            connectFourBoard.getColumns().get( x ).add( GamePiece.RED );
+            connectFourBoard.getColumns().get( x ).add( GamePiece.RED );
+            connectFourBoard.getColumns().get( x ).add( GamePiece.RED );
+            connectFourBoard.getColumns().get( x ).add( GamePiece.RED );
+            connectFourBoard.getColumns().get( x ).add( GamePiece.RED );
+            connectFourBoard.getColumns().get( x ).add( GamePiece.RED );
         }
 
         assertTrue(connectFourBoard.isBoardFull());
@@ -156,8 +156,8 @@ public class ConnectFourBoardImplTest
     @Test
     public void testToString()
     {
-        connectFourBoard.getColumns().get( 0 ).add( Player.RED );
-        connectFourBoard.getColumns().get( 0 ).add( Player.BLACK );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.RED );
+        connectFourBoard.getColumns().get( 0 ).add( GamePiece.BLACK );
 
         String toString = connectFourBoard.toString();
 
