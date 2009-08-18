@@ -14,6 +14,13 @@ public interface ConnectFourScorer
     boolean isGameOver( final ConnectFourBoard connectFourBoard );
 
     /**
+     *
+     * @param connectFourBoard Board
+     * @return True if the game has a winner, false if game is not over or there is a tie.
+     */
+    public boolean hasWinner( ConnectFourBoard connectFourBoard );
+
+    /**
      * Who won the game?
      *
      * @param connectFourBoard Connect Four Board

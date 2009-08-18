@@ -51,8 +51,24 @@ public class ConnectFourScorerImplTest
                        "RBRBRBR",
                        "RBRBRBR" );
 
-        assertFalse(connectFourScorer.isGameOver( connectFourBoard ));
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertNull(connectFourScorer.getWinner( connectFourBoard ));
+    }
+
+    @Test
+    public void testFullBoardWithWinner()
+        throws Exception
+    {
+        buildBoardRow( connectFourBoard,
+                       "RRRRRRR",
+                       "RBRBRBR",
+                       "BRBRBRB",
+                       "BRBRBRB",
+                       "RBRBRBR",
+                       "RBRBRBR" );
+
+        assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
+        assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
     @Test
@@ -68,7 +84,7 @@ public class ConnectFourScorerImplTest
                        "BBRRRRB" );
 
         assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
-        Assert.assertEquals( Player.RED, connectFourScorer.getWinner( connectFourBoard ));
+        assertEquals( Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
     @Test
@@ -169,7 +185,7 @@ public class ConnectFourScorerImplTest
         assertTrue(connectFourScorer.isGameOver( connectFourBoard ));
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
-    
+
     private void buildBoardRow( ConnectFourBoard connectFourBoard, String... rows )
         throws ColumnFullException
     {

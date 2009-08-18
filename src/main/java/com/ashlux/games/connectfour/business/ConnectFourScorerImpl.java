@@ -9,8 +9,13 @@ public class ConnectFourScorerImpl
 
     public boolean isGameOver( final ConnectFourBoard connectFourBoard )
     {
-        return getWinner( connectFourBoard ) != null;
+        // have a winner OR board is full (draw)
+        return hasWinner( connectFourBoard ) || connectFourBoard.isBoardFull();
+    }
 
+    public boolean hasWinner( ConnectFourBoard connectFourBoard )
+    {
+        return getWinner( connectFourBoard ) != null;
     }
 
     public Player getWinner( ConnectFourBoard connectFourBoard )
