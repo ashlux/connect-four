@@ -4,6 +4,7 @@ import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardImpl;
 import com.ashlux.games.connectfour.domain.Player;
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
+import com.ashlux.games.connectfour.business.ai.RandomConnectFourDecider;
 import static org.testng.Assert.assertEquals;
 import org.testng.annotations.Test;
 
@@ -24,7 +25,7 @@ public class RandomConnectFourDeciderTest
         }
 
         RandomConnectFourDecider randomConnectFourDecider = new RandomConnectFourDecider();
-        int column = randomConnectFourDecider.decide( connectFourBoard );
+        int column = randomConnectFourDecider.decide( connectFourBoard, Player.RED );
 
         // last column should always be selected, eventually
         assertEquals( column, connectFourBoard.getNumberOfColumns() - 1 );

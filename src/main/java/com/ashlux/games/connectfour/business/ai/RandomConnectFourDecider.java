@@ -1,13 +1,14 @@
-package com.ashlux.games.connectfour.business;
+package com.ashlux.games.connectfour.business.ai;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
+import com.ashlux.games.connectfour.domain.Player;
 
 import java.util.Random;
 
 public class RandomConnectFourDecider
     implements ConnectFourDecider
 {
-    public int decide( ConnectFourBoard connectFourBoard )
+    public int decide( ConnectFourBoard connectFourBoard, Player computerPlayer )
     {
         Random random = new Random();
         int column;
