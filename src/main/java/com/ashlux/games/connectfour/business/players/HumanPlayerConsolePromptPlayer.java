@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business.deciders;
+package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.Player;
@@ -12,14 +12,14 @@ import java.io.OutputStream;
 /**
  * Not thread-safe.
  */
-public class HumanPlayerConsolePromptDecider
-    implements ConnectFourDecider
+public class HumanPlayerConsolePromptPlayer
+    implements ConnectFourPlayer
 {
     private OutputStream outputStream;
 
     private BufferedReader bufferedReader;
 
-    public HumanPlayerConsolePromptDecider( OutputStream outputStream, InputStream inputStream )
+    public HumanPlayerConsolePromptPlayer( OutputStream outputStream, InputStream inputStream )
     {
         bufferedReader = new BufferedReader( new InputStreamReader( inputStream ) );
         this.outputStream = outputStream;

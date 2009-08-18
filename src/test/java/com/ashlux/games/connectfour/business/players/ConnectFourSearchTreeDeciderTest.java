@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business.deciders;
+package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.business.play.ConnectFourScorerImplTest;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
@@ -13,7 +13,7 @@ public class ConnectFourSearchTreeDeciderTest
     public void testDecide_emptyBoardPerformance()
         throws Exception
     {
-        ConnectFourSearchTreeDecider connectFourSearchTreeDecider = new ConnectFourSearchTreeDecider();
+        ConnectFourSearchTreePlayer connectFourSearchTreeDecider = new ConnectFourSearchTreePlayer();
         ConnectFourBoard connectFourBoard = ConnectFourBoardFactory.createEmptyBoard();
         ConnectFourScorerImplTest.buildBoardRow( connectFourBoard,
                        "RRR--BB",

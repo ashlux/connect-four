@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business.deciders;
+package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
@@ -22,8 +22,8 @@ public class HumanPlayerConsolePromptDeciderTest
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream( "0\n".getBytes() );
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        HumanPlayerConsolePromptDecider humanPlayerConsolePromptDecider =
-            new HumanPlayerConsolePromptDecider( byteArrayOutputStream, byteArrayInputStream );
+        HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
+            new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
         int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
 
@@ -41,8 +41,8 @@ public class HumanPlayerConsolePromptDeciderTest
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream( "-100\n1\n".getBytes() );
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        HumanPlayerConsolePromptDecider humanPlayerConsolePromptDecider =
-            new HumanPlayerConsolePromptDecider( byteArrayOutputStream, byteArrayInputStream );
+        HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
+            new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
         int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
 
@@ -59,8 +59,8 @@ public class HumanPlayerConsolePromptDeciderTest
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream( "10000\n2\n".getBytes() );
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        HumanPlayerConsolePromptDecider humanPlayerConsolePromptDecider =
-            new HumanPlayerConsolePromptDecider( byteArrayOutputStream, byteArrayInputStream );
+        HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
+            new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
         int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
 
@@ -83,8 +83,8 @@ public class HumanPlayerConsolePromptDeciderTest
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream( "0\n3\n".getBytes() );
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        HumanPlayerConsolePromptDecider humanPlayerConsolePromptDecider =
-            new HumanPlayerConsolePromptDecider( byteArrayOutputStream, byteArrayInputStream );
+        HumanPlayerConsolePromptPlayer humanPlayerConsolePromptDecider =
+            new HumanPlayerConsolePromptPlayer( byteArrayOutputStream, byteArrayInputStream );
 
         int selectedColumn = humanPlayerConsolePromptDecider.decide( connectFourBoard, Player.RED );
 

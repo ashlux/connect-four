@@ -1,9 +1,9 @@
-package com.ashlux.games.connectfour.business.deciders;
+package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.Player;
 
-public interface ConnectFourDecider
+public interface ConnectFourPlayer
 {
     /**
      * Returns column to play - starting at zero. Called whenever it is the computer's

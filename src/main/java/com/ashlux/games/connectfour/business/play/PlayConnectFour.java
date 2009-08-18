@@ -1,8 +1,8 @@
 package com.ashlux.games.connectfour.business.play;
 
-import com.ashlux.games.connectfour.business.deciders.ConnectFourDecider;
-import com.ashlux.games.connectfour.business.deciders.HumanPlayerConsolePromptDecider;
-import com.ashlux.games.connectfour.business.deciders.RandomConnectFourDecider;
+import com.ashlux.games.connectfour.business.players.ConnectFourPlayer;
+import com.ashlux.games.connectfour.business.players.HumanPlayerConsolePromptPlayer;
+import com.ashlux.games.connectfour.business.players.RandomConnectFourPlayer;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
 import com.ashlux.games.connectfour.domain.Player;
@@ -12,9 +12,9 @@ public class PlayConnectFour
     public void play()
         throws Exception
     {
-        ConnectFourDecider playerOne = new HumanPlayerConsolePromptDecider( System.out, System.in );
+        ConnectFourPlayer playerOne = new HumanPlayerConsolePromptPlayer( System.out, System.in );
         Player playerOnePiece = Player.RED;
-        ConnectFourDecider playerTwo = new RandomConnectFourDecider();
+        ConnectFourPlayer playerTwo = new RandomConnectFourPlayer();
         Player playerTwoPiece = Player.BLACK;
 
         ConnectFourScorer connectFourScorer = new ConnectFourScorerImpl();

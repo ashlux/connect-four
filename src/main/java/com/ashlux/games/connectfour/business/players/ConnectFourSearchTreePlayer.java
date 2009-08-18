@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business.deciders;
+package com.ashlux.games.connectfour.business.players;
 
 import com.ashlux.games.connectfour.business.play.ConnectFourScorer;
 import com.ashlux.games.connectfour.business.play.ConnectFourScorerImpl;
@@ -12,8 +12,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ConnectFourSearchTreeDecider
-    implements ConnectFourDecider
+public class ConnectFourSearchTreePlayer
+    implements ConnectFourPlayer
 {
     public static final String NAME = "Search Tree";
 
