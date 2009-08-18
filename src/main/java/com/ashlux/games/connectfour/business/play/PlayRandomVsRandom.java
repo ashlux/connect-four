@@ -1,7 +1,10 @@
-package com.ashlux.games.connectfour.business.deciders;
+package com.ashlux.games.connectfour.business.play;
 
 import com.ashlux.games.connectfour.business.play.ConnectFourScorer;
 import com.ashlux.games.connectfour.business.play.ConnectFourScorerImpl;
+import com.ashlux.games.connectfour.business.deciders.ConnectFourDecider;
+import com.ashlux.games.connectfour.business.deciders.HumanPlayerPromptDecider;
+import com.ashlux.games.connectfour.business.deciders.RandomConnectFourDecider;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
 import com.ashlux.games.connectfour.domain.Player;

@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business;
+package com.ashlux.games.connectfour.business.play;
 
 import com.ashlux.games.connectfour.domain.exception.ColumnFullException;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;

@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business;
+package com.ashlux.games.connectfour.business.deciders;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardImpl;

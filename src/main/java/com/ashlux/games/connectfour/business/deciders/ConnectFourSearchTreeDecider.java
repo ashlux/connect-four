@@ -48,7 +48,7 @@ public class ConnectFourSearchTreeDecider
 
         Collections.sort( pathChoices );
 
-        return pathChoices.get( 0 ).getColumn();
+        return pathChoices.get( pathChoices.size() - 1 ).getColumn();
     }
 
     private int tryColumn( int columnIndex, final ConnectFourBoard connectFourBoard, Player computerPlayer,
@@ -66,7 +66,6 @@ public class ConnectFourSearchTreeDecider
             // column should not be full
             throw new ConnectFourRuntimeException();
         }
-
 
         if ( connectFourScorer.isGameOver( newConnectFourBoard ) )
         {
