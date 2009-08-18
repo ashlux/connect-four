@@ -4,7 +4,7 @@ import com.ashlux.games.connectfour.business.players.ConnectFourPlayer;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.GamePiece;
 
-public class ConnectFourGame
+public class ConnectFourGameController
 {
     private ConnectFourPlayer firstPlayer;
 
@@ -18,6 +18,8 @@ public class ConnectFourGame
 
     private ConnectFourBoard connectFourBoard;
 
+    // TODO: Don't throw generic Exception
+    // TODO: Remove IO calls
     public void play()
         throws Exception
     {
@@ -28,13 +30,13 @@ public class ConnectFourGame
             {
                 int columnChoice = firstPlayer.decide( connectFourBoard, firstGamePiecePiece );
                 connectFourBoard.putPiece( columnChoice, firstGamePiecePiece );
-                System.out.println( "Player ONE choose column [" + columnChoice + "-" + firstGamePiecePiece + "]" );
+//                System.out.println( "Player ONE choose column [" + columnChoice + "-" + firstGamePiecePiece + "]" );
             }
             else
             {
                 int columnChoice = secondPlayer.decide( connectFourBoard, secondGamePiecePiece );
                 connectFourBoard.putPiece( columnChoice, secondGamePiecePiece );
-                System.out.println( "Player TWO choose column [" + columnChoice + "-" + secondGamePiecePiece + "]" );
+//                System.out.println( "Player TWO choose column [" + columnChoice + "-" + secondGamePiecePiece + "]" );
             }
 
             playerOneTurn = !playerOneTurn;
@@ -42,8 +44,8 @@ public class ConnectFourGame
         while ( !connectFourScorer.isGameOver( connectFourBoard ) );
 
         GamePiece winner = connectFourScorer.getWinner( connectFourBoard );
-        System.out.println( "\n" + connectFourBoard.toString() );
-        System.out.println( "Winner is " + ( winner == null ? "a tie" : winner ) + "!" );
+//        System.out.println( "\n" + connectFourBoard.toString() );
+//        System.out.println( "Winner is " + ( winner == null ? "a tie" : winner ) + "!" );
     }
 
     public ConnectFourPlayer getFirstPlayer()

@@ -39,8 +39,6 @@ public class HumanPlayerConsolePromptPlayer
             IOUtils.write( "\nSelect column [0-6]: ", outputStream );
 
             String input = bufferedReader.readLine();
-            IOUtils.write( input + "\n\n", outputStream );
-
             int selectedColumn = Integer.parseInt( input );
             if ( selectedColumn < 0 || selectedColumn > connectFourBoard.getNumberOfColumns() )
             {
