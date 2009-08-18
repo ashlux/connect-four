@@ -186,7 +186,7 @@ public class ConnectFourScorerImplTest
         assertEquals(Player.RED, connectFourScorer.getWinner( connectFourBoard ));
     }
 
-    private void buildBoardRow( ConnectFourBoard connectFourBoard, String... rows )
+    public static void buildBoardRow( ConnectFourBoard connectFourBoard, String... rows )
         throws ColumnFullException
     {
         for ( int y = rows.length - 1; y >= 0; --y )
