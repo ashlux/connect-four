@@ -1,7 +1,7 @@
 package com.ashlux.games.connectfour.business.ai;
 
-import com.ashlux.games.connectfour.business.ConnectFourScorer;
-import com.ashlux.games.connectfour.business.ConnectFourScorerImpl;
+import com.ashlux.games.connectfour.business.play.ConnectFourScorer;
+import com.ashlux.games.connectfour.business.play.ConnectFourScorerImpl;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
 import com.ashlux.games.connectfour.domain.Player;
