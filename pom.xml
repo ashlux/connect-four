@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ashlux.games.connect-four</groupId>
   <artifactId>connect-four</artifactId>
-  <version>1.0</version>
+  <version>0.1-SNAPSHOT</version>
 
   <build>
     <plugins>
@@ -15,6 +15,26 @@
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <transformers>
+            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              <mainClass>com.ashlux.games.connectfour.business.play.ConnectFourConsoleGame</mainClass>
+            </transformer>
+          </transformers>
         </configuration>
       </plugin>
     </plugins>

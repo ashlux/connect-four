@@ -30,7 +30,7 @@ public class HumanPlayerConsolePromptDeciderTest
         assertEquals( selectedColumn, 0 );
         assertEquals( new String( byteArrayOutputStream.toByteArray() ),
                       "\n" + ". . . . . . . \n" + ". . . . . . . \n" + ". . . . . . . \n" + ". . . . . . . \n" +
-                          ". . . . . . . \n" + ". . . . . . . \n\n\n" + "Select column [0-6]: 0\n\n" );
+                          ". . . . . . . \n" + ". . . . . . . \n\n\n" + "Select column [0-6]: " );
     }
 
     @Test
