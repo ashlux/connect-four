@@ -1,9 +1,10 @@
-package com.ashlux.games.connectfour.business.play;
+package com.ashlux.games.connectfour.console;
 
+import com.ashlux.games.connectfour.business.play.ConnectFourGameController;
+import com.ashlux.games.connectfour.business.play.ConnectFourScorerImpl;
+import com.ashlux.games.connectfour.business.players.RandomConnectFourPlayer;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
 import com.ashlux.games.connectfour.domain.GamePiece;
-import com.ashlux.games.connectfour.business.players.HumanPlayerConsolePromptPlayer;
-import com.ashlux.games.connectfour.business.players.RandomConnectFourPlayer;
 
 public class ConnectFourConsoleGame
 {

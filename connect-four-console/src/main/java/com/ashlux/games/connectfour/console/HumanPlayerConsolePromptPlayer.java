@@ -1,5 +1,6 @@
-package com.ashlux.games.connectfour.business.players;
+package com.ashlux.games.connectfour.console;
 
+import com.ashlux.games.connectfour.business.players.ConnectFourPlayer;
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.GamePiece;
 import org.apache.commons.io.IOUtils;

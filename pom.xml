@@ -4,8 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ashlux.games.connect-four</groupId>
   <artifactId>connect-four</artifactId>
+  <packaging>pom</packaging>
   <version>0.1-SNAPSHOT</version>
-
+  
   <build>
     <plugins>
       <plugin>
@@ -17,28 +18,13 @@
           <target>1.6</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>1.2.1</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <transformers>
-            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              <mainClass>com.ashlux.games.connectfour.business.play.ConnectFourConsoleGame</mainClass>
-            </transformer>
-          </transformers>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
+
+  <modules>
+    <module>connect-four-console</module>
+    <module>connect-four-board</module>
+  </modules>
 
   <dependencies>
     <dependency>
@@ -48,24 +34,18 @@
       <classifier>jdk15</classifier>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>1.4</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.5.5</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.code.guice</groupId>
-      <artifactId>guice</artifactId>
-      <version>2.0.1</version>
-      <scope>compile</scope>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.slf4j</groupId>-->
+      <!--<artifactId>slf4j-log4j12</artifactId>-->
+      <!--<version>1.5.5</version>-->
+      <!--<scope>compile</scope>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>com.google.code.guice</groupId>-->
+      <!--<artifactId>guice</artifactId>-->
+      <!--<version>2.0.1</version>-->
+      <!--<scope>compile</scope>-->
+    <!--</dependency>-->
     <!--<dependency>-->
       <!--<groupId>com.google.code.guice</groupId>-->
       <!--<artifactId>guice-struts</artifactId>-->
@@ -78,12 +58,12 @@
       <!--<version>2.0.1</version>-->
       <!--<scope>compile</scope>-->
     <!--</dependency>-->
-    <dependency>
-      <groupId>com.jteigen.scalatest</groupId>
-      <artifactId>junit4runner</artifactId>
-      <version>1.0</version>
-      <scope>test</scope>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.jteigen.scalatest</groupId>-->
+      <!--<artifactId>junit4runner</artifactId>-->
+      <!--<version>1.0</version>-->
+      <!--<scope>test</scope>-->
+    <!--</dependency>-->
   </dependencies>
 
   <repositories>

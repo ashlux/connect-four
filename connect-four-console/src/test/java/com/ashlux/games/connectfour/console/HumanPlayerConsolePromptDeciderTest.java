@@ -1,4 +1,4 @@
-package com.ashlux.games.connectfour.business.players;
+package com.ashlux.games.connectfour.console;
 
 import com.ashlux.games.connectfour.domain.ConnectFourBoard;
 import com.ashlux.games.connectfour.domain.ConnectFourBoardFactory;
