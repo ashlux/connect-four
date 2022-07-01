@@ -54,7 +54,7 @@ java.lang.NoClassDefFoundError: org/codehaus/plexus/util/xml/XmlStreamReader -->
           <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>
-            <version>1.5.8</version>
+            <version>3.0.16</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -73,7 +73,7 @@ java.lang.NoClassDefFoundError: org/codehaus/plexus/util/xml/XmlStreamReader -->
           <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>
-            <version>1.5.8</version>
+            <version>3.0.16</version>
           </dependency>
         </dependencies>
       </plugin>
